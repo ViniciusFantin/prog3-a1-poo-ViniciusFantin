@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     try {
         $user = new Usuario($name, $email, $password);
         Autenticador::register($user);
-        echo "Usuário cadastrado com sucesso! <a>href='login.php'>Faça Login</a>";
+        echo "Usuário cadastrado com sucesso! <a href='login.php'>Faça Login</a>";
     } catch (Exception $e) {
         echo "Erro:". $e->getMessage() . "<a href='cadastro.php'>Voltar</a>";
     }
