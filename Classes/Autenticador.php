@@ -20,11 +20,11 @@ class Autenticador {
         $_SESSION['users'] = $users;
     }
 
-    public static function register(User $user) {
+    public static function register(Usuario $user) {
         $users = self::userCollection();
         foreach ($users as $u) {
             if ($u->getEmail() == $user->getEmail()) {
-                throw new Execption("Usuario á cadastrado");
+                throw new Exception("Usuario já cadastrado");
             }
         }
         $users[] = $user;
@@ -35,7 +35,7 @@ class Autenticador {
         $users = self::userCollection();
         foreach ($users as $user) {
             if ($user->getEmail() == $email && $user->PasswordVerification($password)) {
-                Sessao::set('Usuario', $user);
+                Sessao::set('user', $user);
                 return true;
             }
         }

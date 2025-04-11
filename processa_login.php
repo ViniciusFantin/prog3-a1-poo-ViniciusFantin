@@ -8,9 +8,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $password = isset($_POST['password']) ? $_POST['password'] :'';
 
     $email = filter_var($email, FILTER_SANITIZE_EMAIL);
-    $senha = trim($senha);
+    $password = trim($password);
 
-    if (Autenticador::login($email, $senha)) {
+    if (Autenticador::login($email, $password)) {
         // Se marcado, cria um cookie com expiração de 30 dias
         if (isset($_POST['lembrar'])) {
             setcookie('email', $email, time() + (86400 * 30), "/"); // 86400 = 1 dia

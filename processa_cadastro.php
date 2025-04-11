@@ -4,7 +4,7 @@ require_once 'Classes/Usuario.php';
 require_once 'Classes/Autenticador.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $name = isset($_POST['nome']) ? $_POST['nome'] : '';
+    $name = isset($_POST['name']) ? $_POST['name'] : '';
     $email = isset($_POST['email']) ? $_POST['email']: '';
     $password = isset($_POST['password']) ? $_POST['password']: '';
 
@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // trycatch para tratamento de erro
     try {
-        $user = new User($name, $email, $password);
+        $user = new Usuario($name, $email, $password);
         Autenticador::register($user);
         echo "Usuário cadastrado com sucesso! <a>href='login.php'>Faça Login</a>";
     } catch (Exception $e) {
