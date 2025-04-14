@@ -33,3 +33,5 @@ O sistema foi criado com foco em boas práticas de programação e organização
 ## Instruções para Executar Localmente
 
 1. **Clone ou Baixe o Projeto:**
+- Git Bash
+- GitHub Desktop
